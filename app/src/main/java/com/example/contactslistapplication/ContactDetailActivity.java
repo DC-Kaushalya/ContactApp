@@ -11,8 +11,8 @@ public class ContactDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_contact_detail);
 
         TextView contactName = findViewById(R.id.contactName);
-        TextView contactPhoneNumber = findViewById(R.id.contactPhoneNumber);
-        TextView contactEmail = findViewById(R.id.contactEmail);
+        TextView contactPhoneNumber = findViewById(R.id.phoneNumber);
+        TextView contactEmail = findViewById(R.id.email);
 
         // Get the data passed from MainActivity
         String name = getIntent().getStringExtra("NAME");

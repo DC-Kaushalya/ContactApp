@@ -23,9 +23,20 @@
             android:layout_marginBottom="20dp"
             android:src="@drawable/ic_user"/>
 
-        <!-- Name Field -->
+        <!-- First Name Field -->
         <TextView
-            android:id="@+id/contactName"
+            android:id="@+id/firstName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Last Name Field -->
+        <TextView
+            android:id="@+id/lastName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="24sp"
@@ -36,7 +47,7 @@
 
         <!-- Phone Number Field -->
         <TextView
-            android:id="@+id/contactPhoneNumber"
+            android:id="@+id/phoneNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
@@ -46,7 +57,7 @@
 
         <!-- Email Field -->
         <TextView
-            android:id="@+id/contactEmail"
+            android:id="@+id/email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
