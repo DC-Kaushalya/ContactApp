@@ -24,7 +24,7 @@ public class AddEditContactActivity extends AppCompatActivity {
 
         nameEditText = findViewById(R.id.firstName + R.id.lastName);
         phoneNumberEditText = findViewById(R.id.phoneNumber);
-        emailEditText = findViewById(R.id.contactEmail);
+        emailEditText = findViewById(R.id.email);
         saveButton = findViewById(R.id.saveButton);
 
         Intent intent = getIntent();
