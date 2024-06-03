@@ -17,29 +17,21 @@
         android:layout_gravity="center_horizontal"
         android:src="@drawable/ic_user"/>
 
-    <!-- First Name Field -->
+    <!-- Full Name Field -->
     <EditText
-        android:id="@+id/firstName"
+        android:id="@+id/fullName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/avatar"
         android:layout_marginTop="24dp"
         android:hint="First name"/>
 
-    <!-- Last Name Field -->
-    <EditText
-        android:id="@+id/lastName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/firstName"
-        android:hint="Last name"/>
-
     <!-- Phone Number Field -->
     <EditText
         android:id="@+id/phoneNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lastName"
+        android:layout_below="@id/fullName"
         android:hint="Phone"
         android:inputType="phone"/>
 

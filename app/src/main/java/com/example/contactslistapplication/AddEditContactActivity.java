@@ -22,7 +22,7 @@ public class AddEditContactActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_edit_contact);
 
-        nameEditText = findViewById(R.id.firstName + R.id.lastName);
+        nameEditText = findViewById(R.id.fullName);
         phoneNumberEditText = findViewById(R.id.phoneNumber);
         emailEditText = findViewById(R.id.email);
         saveButton = findViewById(R.id.saveButton);
