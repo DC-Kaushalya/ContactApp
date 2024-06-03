@@ -14,6 +14,15 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="35dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/ic_user"/>
+
         <!-- Name Field -->
         <TextView
             android:id="@+id/contactName"
@@ -33,7 +42,7 @@
             android:textSize="18sp"
             android:textColor="@android:color/darker_gray"
             android:layout_gravity="center"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="10dp" />
 
         <!-- Email Field -->
         <TextView
@@ -45,5 +54,25 @@
             android:layout_gravity="center"
             android:layout_marginBottom="16dp" />
 
+        <!-- Update Button -->
+        <Button
+            android:id="@+id/updateButton"
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:background="@color/gray"
+            android:layout_marginBottom="5dp"
+            android:text="Update"
+            android:textColor="@android:color/white" />
+
+        <!-- Delete Button -->
+        <Button
+            android:id="@+id/deleteButton"
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_green_light"
+            android:text="Delete"
+            android:textColor="@android:color/white" />
+
     </LinearLayout>
+
 </ScrollView>
