@@ -9,7 +9,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
     private RecyclerView recyclerView;
     private ContactsAdapter adapter;
     private List<Contact> contactsList = new ArrayList<>();
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         contactsList.add(new Contact("Rashmi Diwyanjalee", "0768890308", "rash@example.com"));
         contactsList.add(new Contact("Sithum sankalpa", "0776690333", "sithum@example.com"));
         contactsList.add(new Contact("Tharindu Nipun", "0777790336", "thari@example.com"));
-
-
     }
+
+
 }

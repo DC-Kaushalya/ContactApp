@@ -12,10 +12,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHolder> {
+
+    //Creating variables
     private List<Contact> contacts;
     private List<Contact> contactsFiltered;
     private Context context;
 
+    //Creating constructor
     public ContactsAdapter(List<Contact> contacts, Context context) {
         this.contacts = contacts;
         this.context = context;
@@ -48,21 +51,9 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
         return contacts.size();
     }
 
-    public void filter(String text) {
-        contactsFiltered.clear();
-        if (text.isEmpty()) {
-            contactsFiltered.addAll(contacts);
-        } else {
-            text = text.toLowerCase();
-            for (Contact item : contacts) {
-                if (item.getName().toLowerCase().contains(text)) {
-                    contactsFiltered.add(item);
-                }
-            }
-        }
-        notifyDataSetChanged();
+    public interface OnContactClickListener {
+        void onContactClick(int position);
     }
-
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         TextView nameTextView, phoneNumberTextView;
