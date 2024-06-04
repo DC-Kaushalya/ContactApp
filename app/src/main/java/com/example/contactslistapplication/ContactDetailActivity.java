@@ -7,6 +7,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 public class ContactDetailActivity extends AppCompatActivity {
 
     private TextView contactName;
@@ -18,6 +22,10 @@ public class ContactDetailActivity extends AppCompatActivity {
     private String name;
     private String phone;
     private String email;
+
+    public ContactsAdapter adapter;
+
+    public List<Contact> contactsList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,11 +61,23 @@ public class ContactDetailActivity extends AppCompatActivity {
     }
 
     private void deleteContact() {
-        // Prepare to return result for deletion
-        Intent resultIntent = new Intent();
-        resultIntent.putExtra("DELETE", true);
-        resultIntent.putExtra("NAME", name);
-        setResult(RESULT_OK, resultIntent);
+        MyApplication app = (MyApplication) getApplicationContext();
+        app.deletedData(phone, email);
+        Map<String, Map<String, String>> returnedMap = app.getOuterMap();
+
+        for (Map.Entry<String, Map<String, String>> entry : returnedMap.entrySet()) {
+            String id = entry.getKey();
+            Map<String, String> details = entry.getValue();
+            String name_new = details.get("name");
+            String phoneNumber_new = details.get("phone_number");
+            String email_new = details.get("email");
+            contactsList.add(new Contact(name_new, phoneNumber_new, email_new));
+        }
+
+        adapter = new ContactsAdapter(contactsList, this);
+        RecyclerViewManager.getRecyclerView().setAdapter(adapter);;
+        RecyclerViewManager.getInstance().getAdapter();
+        RecyclerViewManager.getInstance().refreshRecyclerView();
         finish();
     }
 
