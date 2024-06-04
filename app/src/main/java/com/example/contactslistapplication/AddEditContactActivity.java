@@ -2,11 +2,27 @@ package com.example.contactslistapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.contactslistapplication.MainActivity;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.List;
 
 public class AddEditContactActivity extends AppCompatActivity {
 
@@ -16,6 +32,10 @@ public class AddEditContactActivity extends AppCompatActivity {
     private Button saveButton;
 
     private int position = -1;
+
+    public List<Contact> contactsList = new ArrayList<>();
+    public ContactsAdapter adapter;
+    public RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +62,7 @@ public class AddEditContactActivity extends AppCompatActivity {
     }
 
     private void saveContact() {
+
         String name = nameEditText.getText().toString();
         String phoneNumber = phoneNumberEditText.getText().toString();
         String email = emailEditText.getText().toString();
@@ -51,13 +72,26 @@ public class AddEditContactActivity extends AppCompatActivity {
             return;
         }
 
-        Intent data = new Intent();
-        data.putExtra("name", name);
-        data.putExtra("phoneNumber", phoneNumber);
-        data.putExtra("email", email);
-        data.putExtra("position", position);
+        MyApplication app = (MyApplication) getApplicationContext();
+        app.setSharedData(name, phoneNumber, email);
+        Map<String, Map<String, String>> returnedMap = app.getOuterMap();
+        List<Person> personList = new ArrayList<>();
 
-        setResult(RESULT_OK, data);
+        // Iterating over the outerMap to create Person objects
+        for (Map.Entry<String, Map<String, String>> entry : returnedMap.entrySet()) {
+            String id = entry.getKey();
+            Map<String, String> details = entry.getValue();
+            String name_new = details.get("name");
+            String phoneNumber_new = details.get("phone_number");
+            String email_new = details.get("email");
+            contactsList.add(new Contact(name_new, phoneNumber_new, email_new));
+        }
+
+        adapter = new ContactsAdapter(contactsList, this);
+        RecyclerViewManager.getRecyclerView().setAdapter(adapter);;
+        RecyclerViewManager.getInstance().getAdapter();
+        RecyclerViewManager.getInstance().refreshRecyclerView();
+
         finish();
     }
 }
