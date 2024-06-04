@@ -92,6 +92,15 @@ public class AddEditContactActivity extends AppCompatActivity {
         RecyclerViewManager.getInstance().getAdapter();
         RecyclerViewManager.getInstance().refreshRecyclerView();
 
+        Intent data = new Intent();
+        data.putExtra("name", name);
+        data.putExtra("phoneNumber", phoneNumber);
+        data.putExtra("email", email);
+        data.putExtra("position", position);
+
+        setResult(RESULT_OK, data);
+
         finish();
     }
+
 }
