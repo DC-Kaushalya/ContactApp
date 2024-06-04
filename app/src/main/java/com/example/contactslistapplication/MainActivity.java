@@ -56,8 +56,25 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         MyApplication app = (MyApplication) getApplicationContext();
-        app.setSharedData("Name One", "1111111111", "email1@gmail.com");
-        app.setSharedData("Name Two", "2222222222", "email2@gmail.com");
+        app.setSharedData("Nimal perera", "0778890308", "nimal@example.com");
+        app.setSharedData("Sunil Dias", "0788890308", "sunil@example.com");
+        app.setSharedData("Kethaka alwis", "0778890508", "kethaka@example.com");
+        app.setSharedData("kushan silva", "0118890308", "kushan@example.com");
+        app.setSharedData("Methmi Darmakeerthi", "0768890308", "methmi@example.com");
+        app.setSharedData("Dinushika prasadini", "0778833308", "dinu@example.com");
+        app.setSharedData("Gayathma hiruni", "0718890308", "gaya@example.com");
+        app.setSharedData("Kavishka", "0778890333", "kavi@example.com");
+        app.setSharedData("Tharindu Nayanajith", "0778890336", "tharindu@example.com");
+        app.setSharedData("Sunil perera", "0778890336", "tharindu@example.com");
+        app.setSharedData("Danushkha Dias", "076903508", "dias@example.com");
+        app.setSharedData("Isiri alwis", "071889508", "ishu@example.com");
+        app.setSharedData("Nipuni silva", "0778000308", "nipuni@example.com");
+        app.setSharedData("Kamal dilshan", "0760190308", "kamal@example.com");
+        app.setSharedData("Pabasara kurera", "0728833308", "paba@example.com");
+        app.setSharedData("Rashmi Diwyanjalee", "0768890308", "rash@example.com");
+        app.setSharedData("Sithum sankalpa", "0776690333", "sithum@example.com");
+        app.setSharedData("Tharindu Nipun", "0777790336", "thari@example.com");
+
 
         Map<String, Map<String, String>> returnedMap = app.getOuterMap();
 
