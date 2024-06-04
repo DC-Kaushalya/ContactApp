@@ -2,6 +2,7 @@ package com.example.contactslistapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -52,6 +53,9 @@ public class ContactDetailActivity extends AppCompatActivity {
     }
 
     private void updateContact() {
+        MyApplication app = (MyApplication) getApplicationContext();
+        app.deletedData(phone, email);
+
         // Start an activity for updating the contact
         Intent intent = new Intent(ContactDetailActivity.this, AddEditContactActivity.class);
         intent.putExtra("name", name);
