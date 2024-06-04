@@ -1,15 +1,11 @@
 package com.example.contactslistapplication;
 
 import android.app.Application;
-
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 
 public class MyApplication extends Application {
-
     public Map<String, Map<String, String>> outerMap = new HashMap<>();
 
 
@@ -29,7 +25,6 @@ public class MyApplication extends Application {
         String unique_id = phone_number + "_" + email;
         this.outerMap.remove(unique_id);
     }
-
     public Map<String, Map<String, String>> getOuterMap() {
         return outerMap;
     }

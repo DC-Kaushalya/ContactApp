@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
     public ContactsAdapter adapter;
     public List<Contact> contactsList = new ArrayList<>();
 
-//    private Button saveButton;
 
 //    public Map<String, Map<String, String>> outerMap = new HashMap<>();
 

@@ -2,27 +2,13 @@ package com.example.contactslistapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.contactslistapplication.MainActivity;
-
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.List;
 
 public class AddEditContactActivity extends AppCompatActivity {
 
@@ -35,7 +21,6 @@ public class AddEditContactActivity extends AppCompatActivity {
 
     public List<Contact> contactsList = new ArrayList<>();
     public ContactsAdapter adapter;
-    public RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,7 +84,6 @@ public class AddEditContactActivity extends AppCompatActivity {
         data.putExtra("position", position);
 
         setResult(RESULT_OK, data);
-
         finish();
     }
 
